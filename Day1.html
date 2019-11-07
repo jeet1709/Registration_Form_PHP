@@ -1,0 +1,160 @@
+<!doctypehtml>
+<html>
+<head> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#p2").click(function(){
+    $("div").css({"background-color": "yellow", "font-size": "150%"});
+  });
+   $("#p3").click(function(){
+    $("iframe").css("display", "none");
+  });
+});
+</script>
+  <style type="text/css">
+  #first{
+      align:center;
+      color:blue;
+	  background-color:pink;
+	  border:5px black ridge;
+	  margin:0px 500px;
+	  }
+  #second{
+      margin:0px 20px;
+	  background-color:white;
+	  }
+  #p1{
+      margin:0px 20px;
+	  background-color:white;
+	  }
+  #head1{
+      background-color:orange;
+	  border-width: 5px 5px 5px 5px;
+	  border-style:ridge;
+	  margin:40px 300px;
+	  }
+ .p2{
+     color:black;
+	 }
+
+  </style>
+ <title>FORM</title>
+ <h1 align="center" id="head1">REGISTRATION FORM 2019-20</h1>
+ <script>
+ function validateForm() {
+    var name1 = document.forms["RegForm"]["fname"];
+    var name2 = document.forms["RegForm"]["lname"];
+	var add = document.forms["RegForm"]["add"];
+	var roll = document.forms["RegForm"]["roll"];
+    var sem = document.forms["RegForm"]["Sem"];	
+	var email = document.forms["RegForm"]["email"]; 
+	var phone = document.forms["RegForm"]["phone"]; 	 
+	var fathername = document.forms["RegForm"]["faname"];  
+
+	if (name1.value == "")								 
+	{ 
+		window.alert("Please enter your first name."); 
+		name1.focus(); 
+		return false; 
+	}
+	if (name2.value == "")								 
+	{ 
+		window.alert("Please enter your last name."); 
+		name2.focus(); 
+		return false; 
+	} 
+
+	if (add.value == "")							 
+	{ 
+		window.alert("Please enter your address."); 
+		add.focus(); 
+		return false;  
+	} 
+    if (roll.value == "")							 
+	{ 
+		window.alert("Please enter your roll."); 
+		roll.focus(); 
+		return false; 
+	}
+	if (sem.selectedIndex < 1)				 
+	{ 
+		alert("Please enter your sem."); 
+		sem.focus(); 
+		return false; 
+	}
+	if (email.value == "")								 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf("@", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (email.value.indexOf(".", 0) < 0)				 
+	{ 
+		window.alert("Please enter a valid e-mail address."); 
+		email.focus(); 
+		return false; 
+	} 
+
+	if (phone.value == "")						 
+	{ 
+		window.alert("Please enter your mobile number."); 
+		phone.focus(); 
+		return false; 
+	} 
+
+	if (fathername.value == "")					 
+	{ 
+		window.alert("Please enter your fathername"); 
+		fathername.focus(); 
+		return false; 
+	}  
+
+	return true;
+}
+</script>
+ </head>
+ <body bgcolor="#00FFFF">
+ <iframe width="400" height="390" src="https://gradeup.co/svnit-surat-cut-off-jee-main-i" frameborder="0" allowfullscreen align="right" id="p1"></iframe>
+ <iframe width="400" height="390" src="http://www.svnit.ac.in/" frameborder="0" allowfullscreen align="left" id="second"></iframe>
+    <div id="first" align="justified">
+   <form name="RegForm" action="Day2.php" onsubmit="validateForm()" method="post">
+       <table>
+	  <br>
+      <tr><td><b>Firstname:</b></td><td><input id="fname" type="text" name="fname" placeholder="Enter your first name"></td></tr>
+	 <tr><td><b>Lastname:</b></td><td><input id="lname" type="text" name="lname"  placeholder="Enter your last name"></td></tr>
+	 <tr><td><b><b>Address:</b></td><td><textarea id="add" name="add"  placeholder="Enter your address"></textarea></td></tr>
+     <tr><td><b><b>Roll No.:</b></td><td><input id="roll"type="text" name="roll"  placeholder="Enter your roll no."></td></tr>
+	 <tr><td><b>Semester</b></td><td>
+	             <select id="sem" name="sem">
+				     <option>1<sup>st</sup> sem</option>
+					 <option>2<sup>nd</sup> sem</option>
+					 <option>3<sup>rd</sup> sem</option>
+					 <option>4<sup>th</sup> sem</option>
+				 </select></td></tr>
+	  <tr><td><b>Father's name:</b></td><td><input id="faname" type="text" name="faname"  placeholder="Enter your father's name"></td></tr>
+	  <tr><td><b><b>D.O.B:</b></td><td><input id="dob" type="Date" name="dob"></td></tr>
+	  <tr><td><b>Age:</b></td><td>
+	      
+		     Under 18:<input id="age" type="radio" name="age">
+			 Over 18:<input id="age" type="radio" name="age"></td></tr>
+	   <tr><td><b>Email-id:</b></td><td><input id="email" type="email" name="email"  placeholder="Enter your email"></td></tr>
+	   <tr><td><b>Mobile No.:</b></td><td><input id="phone" type="text" name="phone"  placeholder="Enter your Mobile number"></td></tr>
+	   </table>
+	   <hr>
+	   <b><p align="center">To change color and text size of form:<b><b class="p2" id="p2"><u>click here</u></b></p>
+	   <b><p align="center">To remove advertisement from form:<b><b class="p2" id="p3"><u>click here</u></b></p>
+	   <b><p align ="center"><b><input id="submit" type="submit" value="submit"></b></p> 
+   </form>
+   </div>
+   
+ </body>
+ </html>
